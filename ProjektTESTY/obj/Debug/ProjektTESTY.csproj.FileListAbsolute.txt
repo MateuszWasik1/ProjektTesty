@@ -16,3 +16,4 @@ C:\Users\McBezimienny\source\repos\MateuszWasik1\ProjektTesty\ProjektTESTY\obj\D
 C:\Users\McBezimienny\source\repos\MateuszWasik1\ProjektTesty\ProjektTESTY\obj\Debug\ProjektTESTY.csproj.CopyComplete
 C:\Users\McBezimienny\source\repos\MateuszWasik1\ProjektTesty\ProjektTESTY\obj\Debug\ProjektTESTY.dll
 C:\Users\McBezimienny\source\repos\MateuszWasik1\ProjektTesty\ProjektTESTY\obj\Debug\ProjektTESTY.pdb
+C:\Users\McBezimienny\source\repos\MateuszWasik1\ProjektTesty\ProjektTESTY\obj\Debug\ProjektTESTY.csproj.AssemblyReference.cache
