@@ -13,7 +13,8 @@ namespace ProjektTESTY.MyOwnTest
     [TestFixture]
     public class Tests : BaseMethods
     {
-        [Test]
+        [Test, Order(0), Category("Facebook Test")]
+        [Description("Celem testu jest stworznie nowego konta (Test został wykonany raz podczas pierwszego uruchomienia, dlatego obecnie jest ignorowany - można zmienić dane i wykonać test)")]
         public void UserRegistration()
         {
             Assert.Ignore("Test is working but I already created account based on this data using this test, so this test is only for illustrative reason.");
@@ -72,7 +73,8 @@ namespace ProjektTESTY.MyOwnTest
             //Kliknięcie przycisku "Utwórz nowe konto"
             Thread.Sleep(20000);
         }
-        [Test, Order(0)]
+        [Test, Order(1), Category("Facebook Test")]
+        [Description("Celem testu jest przeprowadzenie logowania do Facebooka.")]
         public void Login()
         {
             IWebElement cookiesButton = driver.FindElement(By.XPath(".//*[@data-testid='cookie-policy-manage-dialog-accept-button']"));
@@ -94,7 +96,8 @@ namespace ProjektTESTY.MyOwnTest
             Thread.Sleep(8000);
         }
         
-        [Test, Order(1)]
+        [Test, Order(2), Category("Facebook Test")]
+        [Description("Celem testu jest przejście do stworzonego profilu")]
         public void ViewProfile()
         {
             IWebElement searchProfile = driver.FindElement(By.XPath(".//*[@href='https://www.facebook.com/profile.php?id=100085269878946']"));
@@ -102,7 +105,8 @@ namespace ProjektTESTY.MyOwnTest
             Thread.Sleep(5000);
             //Wyświetlenie profilu
         }
-        [Test, Order(2)]
+        [Test, Order(3), Category("Facebook Test")]
+        [Description("Celem testu jest przejście między zakładkami dostępnymi w profilu")]
         public void SelectProfilTabs()
         {
             IWebElement info = driver.FindElement(By.LinkText("Informacje"));
@@ -136,7 +140,8 @@ namespace ProjektTESTY.MyOwnTest
             //Przejście do "Powrót do Postów"
 
         }
-        [Test, Order(3)]
+        [Test, Order(4), Category("Facebook Test")]
+        [Description("Celem testu jest dodanie biogramu w karcie pracownika")]
         public void AddBio()
         {
             IWebElement addBIOBtn = driver.FindElement(By.XPath(".//*[@aria-label='Dodaj biogram']"));
@@ -169,7 +174,8 @@ namespace ProjektTESTY.MyOwnTest
             Thread.Sleep(1000);
             //Ponowne zapis bio
         }
-        [Test, Order(4)]
+        [Test, Order(5), Category("Facebook Test")]
+        [Description("Celem testu jest zakończenie pracy z Facebookiem")]
         public void LogOut()
         {
             IWebElement saveCleanBio = driver.FindElement(By.XPath(".//*[@aria-label='Twój profil']"));
