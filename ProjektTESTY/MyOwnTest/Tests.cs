@@ -20,10 +20,12 @@ namespace ProjektTESTY.MyOwnTest
             IWebElement cookiesButton = driver.FindElement(By.XPath(".//*[@data-testid='cookie-policy-manage-dialog-accept-button']"));
             cookiesButton.Click();
             Thread.Sleep(1000);
+            //Usunięcie cookies
 
             IWebElement registerButton = driver.FindElement(By.XPath(".//*[@data-testid='open-registration-form-button']"));
             registerButton.Click();
             Thread.Sleep(1000);
+            //Otwarcie formularza rejestracyjnego
 
             IWebElement firstName = driver.FindElement(By.XPath(".//*[@name='firstname']"));
             firstName.SendKeys("Mateusz");
@@ -106,26 +108,32 @@ namespace ProjektTESTY.MyOwnTest
             IWebElement info = driver.FindElement(By.LinkText("Informacje"));
             info.Click();
             Thread.Sleep(1000);
+            //Przejście do "Informacje"
 
             IWebElement friends = driver.FindElement(By.XPath(".//*[@href='https://www.facebook.com/profile.php?id=100085269878946&sk=friends']"));
             friends.Click();
             Thread.Sleep(1000);
+            //Przejście do "Znajomych"
 
             IWebElement photos = driver.FindElement(By.XPath(".//*[@href='https://www.facebook.com/profile.php?id=100085269878946&sk=photos']"));
             photos.Click();
             Thread.Sleep(1000);
+            //Przejście do "Zdjęć"
 
             IWebElement videos = driver.FindElement(By.XPath(".//*[@href='https://www.facebook.com/profile.php?id=100085269878946&sk=videos']"));
             videos.Click();
             Thread.Sleep(1000);
+            //Przejście do "Filmów"
 
             IWebElement locations = driver.FindElement(By.XPath(".//*[@href='https://www.facebook.com/profile.php?id=100085269878946&sk=map']"));
             locations.Click();
             Thread.Sleep(1000);
+            //Przejście do "Lokalizacji"
 
             IWebElement posts = driver.FindElement(By.LinkText("Posty"));
             posts.Click();
             Thread.Sleep(1000);
+            //Przejście do "Powrót do Postów"
 
         }
         [Test, Order(3)]
@@ -134,26 +142,32 @@ namespace ProjektTESTY.MyOwnTest
             IWebElement addBIOBtn = driver.FindElement(By.XPath(".//*[@aria-label='Dodaj biogram']"));
             addBIOBtn.Click();
             Thread.Sleep(1000);
+            //Otwarcie dodawania bio
 
             IWebElement addBIO = driver.FindElement(By.XPath(".//*[@aria-label='Wprowadź tekst biogramu']"));
             addBIO.SendKeys("Przykładowy tekst BIO");
             Thread.Sleep(1000);
+            //Dodanie tekstu do bio
 
             IWebElement saveBio = driver.FindElement(By.XPath(".//*[@aria-label='Zapisz']"));
             saveBio.Click();
             Thread.Sleep(5000);
+            //Zapis bio
 
             IWebElement cleanBIOBtn = driver.FindElement(By.XPath(".//*[@aria-label='Edytuj biogram']"));
             cleanBIOBtn.Click();
             Thread.Sleep(1000);
+            //Ponowne otwarcie bio (inna nazwa)
 
             IWebElement cleanBIO = driver.FindElement(By.XPath(".//*[@aria-label='Wprowadź tekst biogramu']"));
-            cleanBIO.Clear();
+            cleanBIO.SendKeys("Ponowny przykładowy tekst BIO");
             Thread.Sleep(1000);
+            //Ponowna edycja bio
 
             IWebElement saveCleanBio = driver.FindElement(By.XPath(".//*[@aria-label='Zapisz']"));
             saveCleanBio.Click();
             Thread.Sleep(1000);
+            //Ponowne zapis bio
         }
         [Test, Order(4)]
         public void LogOut()
@@ -161,10 +175,12 @@ namespace ProjektTESTY.MyOwnTest
             IWebElement saveCleanBio = driver.FindElement(By.XPath(".//*[@aria-label='Twój profil']"));
             saveCleanBio.Click();
             Thread.Sleep(1000);
+            //Główne menu porfilu
 
             IWebElement logOut = driver.FindElement(By.XPath(".//*[@data-nocookies='true']"));
             logOut.Click();
             Thread.Sleep(1000);
+            //Wylogowanie się
         }
     }
 }
